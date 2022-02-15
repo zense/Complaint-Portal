@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components
+{
+	.sidebar-text
+	{
+		@apply relative flex items-center justify-center 
+		h-20 w-4/5 mt-2 mb-2 mx-auto shadow-lg
+		bg-gray-800 text-green-500
+		hover:bg-green-600 hover:text-white hover:font-bold hover:text-4xl hover:w-5/6
+		rounded-3xl hover:rounded-xl
+		transition-all duration-500;
+	}
+
+	.my-transition
+	{
+		@apply transition-all duration-1000;
+	}
+}
