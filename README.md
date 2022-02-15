@@ -1,6 +1,3 @@
-
-# Please read the Project Report to get more idea about the Project and its implementaion.
-
 Link to the Project Report: https://docs.google.com/document/d/1HDNpGKUTVpfSyLamEInAwF8HQ7we_7A0w-pMqsbxXGg/edit?usp=sharing
   
 # Instructions to Run the Program:
