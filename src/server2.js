@@ -8,7 +8,8 @@ app.set('/UserMainPageComponents', path.join(__dirname, '/UserMainPageComponents
 app.use(bodyParser.json())
 app.use(cors());
 const port = 3500;
-mongoose.connect('mongodb://localhost:27017/manas');
+const url = "mongodb+srv://YoYo2201:6655332211@cluster0.ysvyk.mongodb.net/manas?retryWrites=true&w=majority"
+mongoose.connect(url);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 

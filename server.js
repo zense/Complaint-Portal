@@ -8,8 +8,8 @@ const jwt = require('jsonwebtoken')
 const cors = require('cors');
 
 const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
-
-mongoose.connect('mongodb://localhost:27017/manas', {
+const url = "mongodb+srv://YoYo2201:6655332211@cluster0.ysvyk.mongodb.net/manas?retryWrites=true&w=majority"
+mongoose.connect(url, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 })
