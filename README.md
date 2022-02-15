@@ -1,8 +1,4 @@
 
-# Please read the Project Report to get more idea about the Project and its implementaion.
-
-Link to the Project Report: https://docs.google.com/document/d/1HDNpGKUTVpfSyLamEInAwF8HQ7we_7A0w-pMqsbxXGg/edit?usp=sharing
-  
 # Instructions to Run the Program:
   1) npm start
   2) node server.js
@@ -39,9 +35,6 @@ Now, we made this project by keeping in mind the students of college who can’t
 5) Can implement a tag feature so that the complaints can be sent/forwarded ( as a notification on website/email) to the specific authority to address it.
 
 # Problems faced during Making
-1) As reactjs was used, one problem we faced was how to change the url of website and change the display accordingly when the login request has authenticated. We were not able to reflect a change in URL and display after being successfully login( As sometimes when the login fails we dont have to change the URL). Hence currently we are changing the login page to the Home Page manually. Navigation in Home Page is working correctly.
-2) Faced a lot of problem in the backend part. How to retrieve the information form the backend server and how to display them in the site was a big problem we faced and failed to resolve in the given time.
-
 # Modules Required
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.1",
@@ -55,10 +48,7 @@ Now, we made this project by keeping in mind the students of college who can’t
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.1.0"
- 
- # Link to Youtube demo Video
-https://youtu.be/Lmc4rT59Qqg    
-*****************************************************************************************************************************************************************
+ *****************************************************************************************************************************************************************
 
 # Getting Started with Create React App
 
