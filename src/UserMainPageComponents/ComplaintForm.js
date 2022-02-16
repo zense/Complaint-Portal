@@ -1,43 +1,6 @@
 import React, {useState} from 'react'
-let ids = 4;
+let ids = "1";
 
-const handleSubmit = () =>
-	{
-		//e.preventDefault();
-		//ids++;
-		//setComplaint({id:"",subject:"",data:"",tags:[],isVisible:false,status:false});
-		//console.log(e);
-
-		const form = document.getElementById('reg-form')
-		form.addEventListener('submit', registerUser)
-
-	async function registerUser(event) {
-		event.preventDefault()
-		const subject = document.getElementById('grid-first-name').value
-		const complaint = document.getElementById('exampleFormControlTextarea1').value
-		console.log(subject);
-		console.log(complaint);
-
-		const result = await fetch('http://localhost:3500/api/registerC', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				subject,
-				complaint
-			})
-		}).then((res) => res.json())
-
-		if (result.status === 'ok') {
-			// everything went fine
-			alert('Complaint Registered Successfully')
-		} else {
-			alert(result.error)
-		}
-	}
-
-}
 export default function ComplaintForm() {
 	const [complaint,setComplaint] = useState({id:"",subject:"",data:"",tags:[],isVisible:false,status:false});
 
@@ -55,6 +18,60 @@ export default function ComplaintForm() {
 		if(e.target.checked){setComplaint({...complaint,tags:[...complaint.tags,e.target.value]});}
 		else {setComplaint({...complaint,tags:complaint.tags.filter(item => item !== e.target.value)});}
 	}
+
+	const handleSubmit = (e) =>
+	{
+		const form = document.getElementById('reg-form')
+		form.addEventListener('submit', registerUser)
+	
+	
+	async function registerUser(event) {
+		event.preventDefault()
+		
+		const id_check = await fetch('http://localhost:3700/api/GetComplaintId', {
+			method: 'GET'
+		}).then((res) => res.json())
+		
+		complaint.id = id_check.id;
+		ids = complaint.id
+		
+		const result = await fetch('http://localhost:3500/api/registerC', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				complaint			
+			})
+		}).then((res) => res.json())
+
+		if (result.status === 'ok') {
+			alert('Complaint Registered Successfully')
+		} else {
+			alert(result.error)
+		}
+		ids++;
+		setComplaint({id:"",subject:"",data:"",tags:[],isVisible:false,status:false});
+
+		const checkPostId = await fetch('http://localhost:3700/api/PostComplaintId', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				ids
+			})
+		}).then((res) => res.json())
+		
+		window.location.reload();
+		/*if (checkPostId.status === 'ok') {
+			alert('Id Updated Successfully')
+		} else {
+			alert(checkPostId.error)
+		}*/
+	}
+
+}
   return (
 	<div class='my-transition bg-white p-10 rounded-2xl'>
 	
@@ -118,7 +135,7 @@ export default function ComplaintForm() {
 		</div>
 		<br/>
 		<div class="flex space-x-2 justify-center">
-  			<button type="submit" id='submit' class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" onClick={()=>{handleSubmit()}}>Register Compliant</button>
+  			<button type="submit" id='submit' class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" onClick={(e)=>{handleSubmit(e)}}>Register Compliant</button>
 		</div>
 	</form>
 

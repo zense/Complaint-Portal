@@ -22,18 +22,19 @@ async function appendData(chatting)
     chatting.save();
 }
 const userSchema = new mongoose.Schema({
-  //id: Number,
+  id: String,
   subject: String,
-  //tags: Array,
   data: String,
-  //isVisible: Boolean,
-  //status: Boolean
+  tags: Array,
+  isVisible: Boolean,
+  status: Boolean
 });
 
 var userModel = mongoose.model('complaints', userSchema);
 
 app.post('/api/registerC', (req, res)=>{
-  var complaint = new userModel(req.body);
+  console.log(req.body.complaint)
+  var complaint = new userModel(req.body.complaint);
   appendData(complaint);
   res.header("Access-Control-Allow-Origin", "*");
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
