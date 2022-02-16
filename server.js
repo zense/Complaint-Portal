@@ -8,7 +8,10 @@ const jwt = require('jsonwebtoken')
 const cors = require('cors');
 
 const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
-const url = "mongodb+srv://YoYo2201:6655332211@cluster0.ysvyk.mongodb.net/manas?retryWrites=true&w=majority"
+const dotenv = require("dotenv");
+dotenv.config({ path: ".env" });
+
+const url = process.env.MONGOOSE_URL;
 mongoose.connect(url, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true

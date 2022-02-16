@@ -5,7 +5,7 @@ import UserMainPage from './UserMainPage'
 import React, { useState } from 'react';
 
 export default function App(){
-    const[count,setcount] =useState(2);
+    const[count,setcount] =useState(1);
 
     return(
         <div>
