@@ -1,8 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+
+const dotenv = require("dotenv");
+dotenv.config({ path: "../.env" });
+
 const port = 3600;
-const url = "mongodb+srv://YoYo2201:6655332211@cluster0.ysvyk.mongodb.net/manas?retryWrites=true&w=majority"
+const url = process.env.MONGOOSE_URL;
+
+
 mongoose.connect(url);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
@@ -33,6 +39,7 @@ app.get('/complaints', (req, res)=>{
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   datas.then(data => res.json(data));
 })
+
 app.listen(port, ()=>{
   console.log(`Server listening on port ${port}`);
 });

@@ -4,12 +4,19 @@ const path = require('path');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
+
+
 app.set('/UserMainPageComponents', path.join(__dirname, '/UserMainPageComponents'))
 app.use(bodyParser.json())
 app.use(cors());
 const port = 3500;
-const url = "mongodb+srv://YoYo2201:6655332211@cluster0.ysvyk.mongodb.net/manas?retryWrites=true&w=majority"
+
+const dotenv = require("dotenv");
+dotenv.config({ path: "../.env" });
+
+const url = process.env.MONGOOSE_URL;
 mongoose.connect(url);
+
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 

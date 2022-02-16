@@ -1,9 +1,9 @@
 
 # Instructions to Run the Program:
-  1) npm start
-  2) node server.js
-  3) node server1.js 
-  4) node server2.js
+  1) `npm start`
+  2) `node server.js`
+  3) `node server1.js` 
+  4) `node server2.js`
   
 # Short Description of Project:
 The official ComplaintBox of every school and company in India, so that the complaints of people can be heard and administration can look into it and improve it.
@@ -36,19 +36,7 @@ Now, we made this project by keeping in mind the students of college who can’t
 
 # Problems faced during Making
 # Modules Required
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.1",
-    "cookie-session": "^2.0.0",
-    "cors": "^2.8.5",
-    "ejs": "^3.1.6",
-    "express": "^4.17.2",
-    "express-session": "^1.17.2",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.1",
-    "passport": "^0.5.2",
-    "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^6.1.0"
- *****************************************************************************************************************************************************************
+All modules required can be seen in `package.json`.
 
 # Getting Started with Create React App
 
