@@ -29,7 +29,7 @@ export default function UserMainPage() {
 
 	const mainpage= ()=> { 
 		return (
-		<div class='flex text-2xl min-h-screen bg-slate-500'>
+		<div class="flex text-2xl min-h-screen bg-[url('/public/bg1.jpg')] bg-cover">
 				<div class='w-1/6 pr-4'>
 					<SideNav
 						handleClick={(val) => {
@@ -39,7 +39,12 @@ export default function UserMainPage() {
 			  }
 					/>
 				</div>
-				<div class='flex flex-col w-3/6 '>{renderAppropriateWindow(count)}</div>
+				
+				<div class='flex flex-col w-3/6 '>
+				    <button class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+						Complaints Portal
+					</button>	
+					{renderAppropriateWindow(count)}</div>
 				{count === 1 ? rnav : null}
 			</div>
 		)
