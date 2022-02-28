@@ -9,10 +9,10 @@ const Complaints = (data) => {
 		if (item.isVisible)
 			return (
 				<div class='p-6'>
-					<div class='rounded-2xl overflow-hidden shadow-lg w-full p-6 bg-slate-300 my-transition'>
+					<div class='rounded-2xl overflow-hidden shadow-lg w-full p-6 bg-gray-800 my-transition'>
 						<div class='px-6 py-4'>
-							<div class='font-bold text-2xl mb-2'>{item.subject}</div>
-							<p class='text-gray-700 text-lg'>{item.data}</p>
+							<div class='font-bold text-white text-2xl mb-2'>{item.subject}</div>
+							<p class='text-blue-300 text-lg'>{item.data}</p>
 						</div>
 						<div class='px-6 pt-4 pb-2'>
 							<span class='inline-block bg-gray-200 rounded-full px-3 py-1 text-base font-semibold text-gray-700 mr-2 mb-2'>
