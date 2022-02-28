@@ -5,6 +5,8 @@ module.exports = {
       primary: '#202225',
       secondary: '#5865f2',
       fsize:32,
+      'geo-bag': "url('/public/Background1.jpg')",
+      
     },
   },
   plugins: [],
