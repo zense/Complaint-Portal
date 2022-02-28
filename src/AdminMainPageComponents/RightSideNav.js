@@ -21,7 +21,7 @@ export default function RightSideNav(props) {
 						onClick={() => updateFilterListState(name)}
 					/>
 					<label
-						class='form-check-label inline-block text-green-500'
+						class='form-check-label inline-block text-blue-300'
 						for='flexCheckChecked'>
 						{name}
 					</label>
@@ -75,15 +75,20 @@ export default function RightSideNav(props) {
 	};
 
 	return (
-		<div class='h-full  m-0 flex flex-col text-white shadow-lg bg-gray-900 right-0 top-0'>
-			<i class='sidebar-text h-20 flex-col'>Complaints</i>
-			<i class='flex flex-col p-4 ml-12'>
+		<div class='h-full  m-0 flex flex-col text-white shadow-lg  bg-inherit right-0 top-0'>
+			<i class='flex-col p-4 ml-12 w-4/5 bg-gray-800 rounded-3xl'>Complaints</i>
+			<br></br>
+			<i class=' py-100 flex-col p-4 ml-12 w-4/5 bg-gray-800 rounded-3xl'>
 				Filters
+				
 				{filters(['Acads', 'Hostel', 'Mess'])}
+				
 			</i>
-			<i class='h-fit flex-col mx-auto shadow-lg bg-gray-800 text-green-500 w-4/5 rounded-3xl mt-8 mb-8 text-xl text-center'>
+			<i class='h-fit flex-col mx-auto shadow-lg bg-gray-800 text--500 w-4/5 rounded-3xl mt-8 mb-8 text-xl text-center'>
 				<i class='p-8 w-full text-3xl text-white'>Subjects</i>
-				{Subjects(props.data)}
+				<p class="text-blue-300">
+				    {Subjects(props.data)}
+				</p>
 			</i>
 		</div>
 	);
